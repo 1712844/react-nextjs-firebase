@@ -31,7 +31,7 @@ const PostItem = ({ post, admin = false }) => {
         <span>
           {wordCount} words. {minutesRead} min read
         </span>
-        <span>💗 {post.heartCount || 0}</span>
+        <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
       </footer>
     </div>
   );

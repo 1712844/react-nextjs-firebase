@@ -11,7 +11,7 @@ import { useState } from 'react';
 import PostFeed from '../components/PostFeed';
 import firebase from '../node_modules/firebase/index';
 
-const LIMIT = 1;
+const LIMIT = 10;
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore
@@ -35,12 +35,12 @@ export default function Home(props) {
 
   const getMorePosts = async () => {
     setLoading(true);
-    const lastPost = posts[posts.length - 1];
+    const last = posts[posts.length - 1];
 
     const cursor =
-      typeof lastPost.createdAt === 'number'
-        ? fromMillis(lastPost.createdAt)
-        : lastPost.createdAt;
+      typeof last.createdAt === 'number'
+        ? fromMillis(last.createdAt)
+        : last.createdAt;
 
     const query = firestore
       .collectionGroup('posts')

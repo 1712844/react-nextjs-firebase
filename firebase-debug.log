@@ -1,0 +1,21 @@
+[debug] [2022-08-05T09:59:27.034Z] ----------------------------------------------------------------------
+[debug] [2022-08-05T09:59:27.036Z] Command:       C:\nodejs\node.exe C:\Users\wippy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-08-05T09:59:27.036Z] CLI Version:   11.4.2
+[debug] [2022-08-05T09:59:27.036Z] Platform:      win32
+[debug] [2022-08-05T09:59:27.037Z] Node Version:  v16.13.1
+[debug] [2022-08-05T09:59:27.037Z] Time:          Fri Aug 05 2022 10:59:27 GMT+0100 (British Summer Time)
+[debug] [2022-08-05T09:59:27.037Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-05T09:59:27.049Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-05T09:59:27.049Z] > authorizing via signed-in user (98chitrungnd@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\wippy\react-nextjs-firebase-course\react-nextjs-firebase-course\myapp
+

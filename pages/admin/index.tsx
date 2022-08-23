@@ -1,10 +1,10 @@
+import AuthCheck from '../../components/AuthCheck';
 import MetaTags from '../../components/Metagtags';
 
-export default function Hello() {
+export default function AdminPostsPage(props) {
   return (
     <main>
-      <MetaTags title="admin page" />
-      <h1>Edit Post</h1>
+      <AuthCheck></AuthCheck>
     </main>
   );
 }

@@ -5,7 +5,7 @@ export default function PostContent({ post }) {
   const createdAt =
     typeof post?.createdAt === 'number'
       ? new Date(post.createdAt)
-      : post.createdAt.toDate();
+      : post.createdAt.ToDate();
 
   return (
     <div className="card">
@@ -14,10 +14,9 @@ export default function PostContent({ post }) {
         Written by{' '}
         <Link href={`/${post.username}`}>
           <a className="text-info">@{post.username}</a>
-        </Link>{' '}
-        on {createdAt.toISOSString()}
+        </Link>
+        on {createdAt.toISOString()}
       </span>
-
       <ReactMarkdown>{post?.content}</ReactMarkdown>
     </div>
   );

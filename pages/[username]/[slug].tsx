@@ -1,8 +1,8 @@
 import { firestore } from '../../lib/firebase';
 import { getUserWithUsername, postToJSON } from '../../lib/getUserWithUsername';
-import { userDocumentData } from 'react-firebase-hooks/firestore';
 import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent';
+import { useDocumentData } from 'react-firebase-hooks/firestore';
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;
@@ -12,10 +12,10 @@ export async function getStaticProps({ params }) {
   let path;
 
   if (userDoc) {
-    const userRef = userDoc.ref.collection('posts').doc(slug);
-    post = postToJSON(await userRef.get());
+    const postRef = userDoc.ref.collection('posts').doc(slug);
+    post = postToJSON(await postRef.get());
 
-    path = userRef.path;
+    path = postRef.path;
   }
 
   return {
@@ -25,9 +25,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const snapshot = await firestore.collectionGroup('posts').get();
+  const snapshot = await firestore.collectionGroups('posts').get();
 
-  const paths = snapshot.docs.map((doc) => {
+  const paths = snapshot.doc.map((doc) => {
     const { slug, username } = doc.data();
     return {
       params: { username, slug },
@@ -44,7 +44,7 @@ export default function Post(props) {
   const postRef = firestore.doc(props.path);
   const [realtimePost] = useDocumentData(postRef);
 
-  const post = realtimePost || props.post;
+  const post = realtimePost || postRef.post;
 
   return (
     <main className={styles.container}>
